@@ -331,7 +331,7 @@ function getRandomSafeSpot() {
     
       setTimeout(() => {
         characterElement.removeChild(speechBubble);
-      }, 3000); // Remove the speech bubble after 3 seconds.
+      }, 7000); // Remove the speech bubble after 7 seconds.
     }
     
 
