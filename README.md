@@ -2,10 +2,11 @@
 
 ### You can visit the chatroom [**here**](https://chillchitchat.com/)
 
+***Enjoy! :)***
 
 ## Description
 
-A simple online multiplayer 2D grid-based game I made with responsive design where players can move around, collect coins and change their appearance. Players can also send messages that appear as speech bubbles above their character and play background music. The web app built with HTML, CSS, and JavaScript and Firebase.
+A fun simple online multiplayer 2D grid-based game I made with responsive design where players can move around, collect coins and change their appearance. Players can also send messages that appear as speech bubbles above their character and play background music. The web app built with HTML, CSS, and JavaScript and Firebase.
 
 ## Features
 
