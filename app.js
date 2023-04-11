@@ -302,7 +302,7 @@ function getRandomSafeSpot() {
 
      
     //Function to add a new message to the DOM
-    function addMessageToDOM(message) {
+    function addMessageToDOM(message, messageKey) {
       const senderId = message.sender;
       const characterElement = playerElements[senderId];
     
@@ -331,8 +331,11 @@ function getRandomSafeSpot() {
     
       setTimeout(() => {
         characterElement.removeChild(speechBubble);
+        // Remove the message from Firebase after removing the speech bubble
+        firebase.database().ref(`messages/${messageKey}`).remove();
       }, 7000); // Remove the speech bubble after 7 seconds.
     }
+
     
 
     //Function to send the message to Firebase
@@ -362,11 +365,11 @@ function getRandomSafeSpot() {
     const allMessagesRef = firebase.database().ref("messages").limitToLast(10); // Change 10 to the number of messages you want to display
     allMessagesRef.on("child_added", (snapshot) => {
       const message = snapshot.val();
+      const messageKey = snapshot.key; // Get the message key
       if (message.timestamp > players[playerId].joinTime) {
-        addMessageToDOM(message);
+        addMessageToDOM(message, messageKey); // Pass the message key to addMessageToDOM
       }
     });
-
 
 
     // Audio
